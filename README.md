@@ -1,38 +1,44 @@
-# 🏥 Healthcare AI: Predictive Appointment Dashboard
+# 🏥 Healthcare AI: Predictive Appointment Management Platform
 
-A full-stack Microservices platform that uses Machine Learning to predict patient "No-Show" probabilities. This project helps healthcare providers optimize scheduling by identifying high-risk appointments in real-time.
+A high-performance Microservices architecture designed to mitigate revenue loss in healthcare systems by predicting patient no-show probabilities using Machine Learning.
 
----
 
-## 🚀 Project Overview
-
-This platform consists of three integrated services working in harmony:
-1.  **AI Engine:** A Python FastAPI service that runs a trained ML model to calculate risk scores.
-2.  **Backend API:** A Node.js/Express server managing a PostgreSQL database of patients and appointments.
-3.  **Frontend Dashboard:** A modern Next.js 15 interface with Tailwind CSS, featuring "High Flight Risk" visual alerts.
-
-## 🛠️ Tech Stack
-
-| Component | Technology |
-| :--- | :--- |
-| **Frontend** | Next.js 15 (App Router), TypeScript, Tailwind CSS, Lucide Icons |
-| **Backend** | Node.js, Express, PostgreSQL (pg-pool) |
-| **AI Service** | Python 3.11, FastAPI, Scikit-learn, Uvicorn |
-| **Database** | PostgreSQL 16 |
-
-## 📐 Architecture
-
-The system follows a microservices architecture:
-* **Next.js (Port 3000)** fetches data from the Express API.
-* **Express (Port 5000)** manages the relational data and coordinates with the AI service.
-* **FastAPI (Port 8000)** serves the ML model predictions via REST endpoints.
 
 ---
 
-## 🏃‍♂️ Getting Started
+## 🌟 Key Features
+* **Predictive Analytics:** Real-time inference using a Scikit-Learn Random Forest model.
+* **Microservices Framework:** Decoupled architecture for independent scaling of AI and Data layers.
+* **Risk-Tiered UI:** Dynamic frontend that highlights "High Flight Risk" (Prob > 0.7) patients with visual alerts.
+* **RBAC Ready:** Database schema supports Roles (Admin, Staff, Doctor) for secure access.
 
-### 1. Database Setup
-Ensure PostgreSQL is running and create the database:
+---
+
+## 🛠️ System Architecture & Tech Stack
+
+### **The Architecture**
+The system is built on a **Three-Tier Microservice Pattern**:
+1.  **Presentation Layer (Next.js 15):** A reactive dashboard that performs client-side data filtering and state management.
+2.  **Logic Layer (Node.js/Express):** Acts as the central orchestrator, handling SQL queries and coordinating REST calls to the AI Engine.
+3.  **Intelligence Layer (Python FastAPI):** A high-performance wrapper around a serialized ML model (`.joblib` or `.pkl`).
+
+### **The Stack**
+* **Frontend:** Next.js, Tailwind CSS, TypeScript
+* **Backend:** Node.js, Express, PostgreSQL
+* **AI:** Python 3.11, FastAPI, Scikit-learn, Pandas
+* **DevOps:** Git, NPM, Virtualenv
+
+---
+
+## 🚀 Installation & Local Development
+
+### **Prerequisites**
+* PostgreSQL 16+
+* Node.js 20+
+* Python 3.10+
+
+### **1. Database Setup**
 ```sql
 CREATE DATABASE healthcare_ai;
--- Run the schema.sql file to build tables
+-- Import schema
+\i 'path/to/schema.sql'
