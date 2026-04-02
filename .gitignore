@@ -1,0 +1,81 @@
+# =============================================================
+# Healthcare AI Platform — Root .gitignore
+# Covers: Node.js backend, project-level tooling, OS artifacts
+# =============================================================
+
+# ── Node.js ───────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json        # keep if you want reproducible installs; remove line to commit it
+*.tgz
+
+# ── Environment / Secrets ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+# Keep the example template
+!.env.example
+
+# ── Logs ──────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Build & Runtime Output ────────────────────────────────────
+dist/
+build/
+out/
+.cache/
+
+# ── OS & Editor Artifacts ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*~
+
+# ── Python (ai_service is a subdirectory) ─────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+*.so
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── ML Artifacts (large binary files — use DVC or S3 in prod) ─
+ai_service/models/*.pkl
+ai_service/models/*.joblib
+ai_service/models/*.h5
+ai_service/models/*.pt
+ai_service/models/*.onnx
+ai_service/data/*.csv
+ai_service/data/*.parquet
+# Keep placeholder so the folders are tracked by Git
+!ai_service/models/.gitkeep
+!ai_service/data/.gitkeep
+
+# ── PostgreSQL / DB ───────────────────────────────────────────
+*.sql.bak
+pg_dump_*.sql

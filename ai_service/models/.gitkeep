@@ -1,0 +1,3 @@
+# This file preserves the models/ directory in git.
+# Actual model binaries (.pkl, .joblib, .onnx, etc.) are blocked by .gitignore.
+# Store trained models in S3, GCS, or DVC in production.

@@ -1,0 +1,32 @@
+{
+  "version": "v1.0.0",
+  "numeric_features": [
+    "patient_age",
+    "distance_km",
+    "previous_no_shows",
+    "appointment_hour",
+    "days_until_appt",
+    "reminder_sent",
+    "chronic_conditions"
+  ],
+  "categorical_features": [
+    "weather_condition",
+    "insurance_type"
+  ],
+  "all_raw_features": [
+    "patient_age",
+    "distance_km",
+    "previous_no_shows",
+    "appointment_hour",
+    "days_until_appt",
+    "reminder_sent",
+    "chronic_conditions",
+    "weather_condition",
+    "insurance_type"
+  ],
+  "target": "did_no_show",
+  "roc_auc_test": 0.6927,
+  "brier_test": 0.2217,
+  "cv_roc_auc_mean": 0.7,
+  "cv_roc_auc_std": 0.0093
+}

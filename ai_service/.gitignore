@@ -1,0 +1,76 @@
+# =============================================================
+# Healthcare AI Platform — ai_service .gitignore
+# Covers: Python, FastAPI, ML model artifacts, virtual envs
+# =============================================================
+
+# ── Virtual Environments ──────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.Python
+
+# ── Python Bytecode ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# ── Distribution / Packaging ──────────────────────────────────
+*.egg-info/
+.eggs/
+dist/
+build/
+MANIFEST
+
+# ── Environment / Secrets ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ── Testing & Coverage ────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.coveragerc
+
+# ── Type Checking & Linting ───────────────────────────────────
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── ML Model Artifacts (large binaries — store with DVC/S3) ───
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+models/*.bin
+models/*.onnx
+models/*.safetensors
+# Keep directory structure in git
+!models/.gitkeep
+
+# ── Training Data (large files — store with DVC/S3) ───────────
+data/*.csv
+data/*.parquet
+data/*.json
+data/*.feather
+# Keep directory structure in git
+!data/.gitkeep
+
+# ── Logs & Temp ───────────────────────────────────────────────
+logs/
+*.log
+tmp/
+temp/
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
